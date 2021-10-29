@@ -1,9 +1,10 @@
 import cities from "data/cities.json";
+import states from "data/states.json";
 import Downshift from "downshift";
 
 const items = cities.map((x) => ({
   ...x,
-  value: x.city,
+  value: x.city + ", " + states[x.state as keyof typeof states],
 }));
 
 export default function Autocomplete({

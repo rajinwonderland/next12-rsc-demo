@@ -3,9 +3,27 @@ export const yearBody = (lng: number, lat: number) => ({
   sdate: "2010",
   grid: "1",
   elems: [
-    { name: "avgt", interval: "yly", units: "degreeF" },
-    { name: "maxt", interval: "yly", units: "degreeF" },
-    { name: "mint", interval: "yly", units: "degreeF" },
+    {
+      name: "avgt",
+      interval: "yly",
+      duration: "yly",
+      reduce: "mean",
+      units: "degreeF",
+    },
+    {
+      name: "maxt",
+      interval: "yly",
+      duration: "yly",
+      reduce: "max",
+      units: "degreeF",
+    },
+    {
+      name: "mint",
+      interval: "yly",
+      duration: "yly",
+      reduce: "min",
+      units: "degreeF",
+    },
   ],
   edate: "2020",
 });
@@ -15,9 +33,27 @@ export const mthBody = (lng: number, lat: number) => ({
   grid: "1",
   edate: "202012",
   elems: [
-    { name: "avgt", interval: "mly", units: "degreeF" },
-    { name: "maxt", interval: "mly", units: "degreeF" },
-    { name: "mint", interval: "mly", units: "degreeF" },
+    {
+      name: "avgt",
+      interval: "mly",
+      duration: "mly",
+      reduce: "mean",
+      units: "degreeF",
+    },
+    {
+      name: "maxt",
+      interval: "mly",
+      duration: "mly",
+      reduce: "max",
+      units: "degreeF",
+    },
+    {
+      name: "mint",
+      interval: "mly",
+      duration: "mly",
+      reduce: "min",
+      units: "degreeF",
+    },
   ],
   sdate: "201901",
 });
@@ -31,8 +67,8 @@ const lines = [
 export const getDefaultStatBody = (lng: number, lat: number) => ({
   loc: `${lng}, ${lat}`,
   grid: "1",
-  sdate: "195001",
-  edate: "202012",
+  sdate: "19500101",
+  edate: "20201231",
 });
 
 export const options = {
@@ -55,8 +91,8 @@ export const options = {
       elems: [
         {
           name: "maxt",
-          interval: "mly",
-          duration: "mly",
+          interval: "dly",
+          duration: "dly",
           reduce: "max",
           smry: "max",
           smry_only: "1",
@@ -72,10 +108,10 @@ export const options = {
       elems: [
         {
           name: "mint",
-          interval: "mly",
-          duration: "mly",
-          reduce: "max",
-          smry: "max",
+          interval: "dly",
+          duration: "dly",
+          reduce: "min",
+          smry: "min",
           smry_only: "1",
           units: "degreeF",
         },
@@ -86,11 +122,13 @@ export const options = {
     label: "Avg Temperature",
     body: (lng: number, lat: number) => ({
       ...getDefaultStatBody(lng, lat),
-      sdate: "201001",
+      sdate: "20100101",
       elems: [
         {
           name: "avgt",
-          interval: "mly",
+          interval: "dly",
+          duration: "dly",
+          reduce: "mean",
           smry: "mean",
           smry_only: "1",
           units: "degreeF",

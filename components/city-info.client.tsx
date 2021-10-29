@@ -9,12 +9,15 @@ export interface CityProps extends PropsWithChildren<{}> {
   population: string;
   rank: string;
   state: string;
+  value: string;
 }
 
 export default function CityInfo(props: CityProps) {
   return (
     <div className="ph4 mw7 mxauto">
-      <h2 className="f2 fw6">Showing Results for {props.city}</h2>
+      <h2 className="f2 fw6 mv1">
+        Showing Results for <span className="blue">{props.value}</span>
+      </h2>
       <div className="flex flex-wrap">
         <VerticalItem label="State" value={props.state} />
         <VerticalItem
@@ -27,8 +30,12 @@ export default function CityInfo(props: CityProps) {
             .format("0%")
             .toUpperCase()}
         />
+        <VerticalItem
+          label="Coordinates"
+          value={`${props.longitude.toFixed(2)}, ${props.latitude.toFixed(2)}`}
+        />
       </div>
-      <div className="cf">{props.children}</div>
+      {props.children}
     </div>
   );
 }

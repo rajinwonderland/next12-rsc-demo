@@ -1,4 +1,6 @@
 import Autocomplete from "components/autocomplete";
+import CurrentWeather from "components/current-weather.server";
+import { StatBlock } from "components/stat-block";
 import { StatItemLoading } from "components/stat-item";
 import TempStat from "components/temp-stat.server";
 import { options } from "lib/acis-options";
@@ -18,6 +20,7 @@ export default function Home() {
     population: "236716",
     rank: "85",
     state: "California",
+    value: "Irvine, CA",
   });
 
   return (
@@ -32,15 +35,20 @@ export default function Home() {
       </Head>
       <Autocomplete onChange={(s) => setCity(s)} />
       <CityInfo {...city}>
-        <Suspense fallback={<StatItemLoading />}>
-          <TempStat city={city} label="Average Temperature" type="avgTemp" />
+        <Suspense fallback={<Skeleton />}>
+          <CurrentWeather city={city} />
         </Suspense>
-        <Suspense fallback={<StatItemLoading />}>
-          <TempStat city={city} label="Lowest Temperature" type="minTemp" />
-        </Suspense>
-        <Suspense fallback={<StatItemLoading />}>
-          <TempStat city={city} label="Highest Temperature" type="maxTemp" />
-        </Suspense>
+        <StatBlock title="Historical Stats">
+          <Suspense fallback={<StatItemLoading />}>
+            <TempStat city={city} label="Average Temperature" type="avgTemp" />
+          </Suspense>
+          <Suspense fallback={<StatItemLoading />}>
+            <TempStat city={city} label="Lowest Temperature" type="minTemp" />
+          </Suspense>
+          <Suspense fallback={<StatItemLoading />}>
+            <TempStat city={city} label="Highest Temperature" type="maxTemp" />
+          </Suspense>
+        </StatBlock>
       </CityInfo>
       <div className="mxauto mw7 pa4">
         <div className="f5 fw5 pb4">{options.yearly.title}</div>

@@ -10,7 +10,7 @@ export default function StatItem({
   label: string;
   value: any;
   className?: string;
-  etc: string;
+  etc?: string;
 }) {
   return (
     <dl className={`fl fn-l w-50 dib-l w-auto-l lh-title mr5-l ${className}`}>
@@ -23,11 +23,11 @@ export default function StatItem({
 
 export function StatItemLoading() {
   return (
-    <div className="fl fn-l w-50 dib-l w-auto-l lh-title mr5-l">
-      <Skeleton className="f6 fw4 ml0" />
-      <div className="f3 fw6 ml0">
+    <dl className="fl fn-l w-50 dib-l w-auto-l lh-title mr5-l">
+      <Skeleton className="fw4 ml0 h1 pv1" />
+      <dd className="f3 fw6 ml0">
         <Spinner />
-      </div>
-    </div>
+      </dd>
+    </dl>
   );
 }
