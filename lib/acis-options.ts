@@ -31,8 +31,8 @@ const lines = [
 export const getDefaultStatBody = (lng: number, lat: number) => ({
   loc: `${lng}, ${lat}`,
   grid: "1",
-  sdate: "1950",
-  edate: "2020",
+  sdate: "195001",
+  edate: "202012",
 });
 
 export const options = {
@@ -55,7 +55,9 @@ export const options = {
       elems: [
         {
           name: "maxt",
-          interval: "yly",
+          interval: "mly",
+          duration: "mly",
+          reduce: "max",
           smry: "max",
           smry_only: "1",
           units: "degreeF",
@@ -70,8 +72,10 @@ export const options = {
       elems: [
         {
           name: "mint",
-          interval: "yly",
-          smry: "min",
+          interval: "mly",
+          duration: "mly",
+          reduce: "max",
+          smry: "max",
           smry_only: "1",
           units: "degreeF",
         },
@@ -82,10 +86,11 @@ export const options = {
     label: "Avg Temperature",
     body: (lng: number, lat: number) => ({
       ...getDefaultStatBody(lng, lat),
+      sdate: "201001",
       elems: [
         {
           name: "avgt",
-          interval: "yly",
+          interval: "mly",
           smry: "mean",
           smry_only: "1",
           units: "degreeF",
