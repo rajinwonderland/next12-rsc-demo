@@ -2,7 +2,7 @@
 
 This is the demo of a historical temperature application (sourced from the ACIS) built with Next.js and React Server Components.
 
-**Demo of the Temperature App here: https://areahub-clients-acis-demo-km52b1mtj-aridge.vercel.app/**
+**Demo of the Temperature App here: https://acis-demo-jmvc0of48-aridge.vercel.app/**
 
 ### Development
 
@@ -29,9 +29,7 @@ Read the announcement from the next team here: [Next.js 12](https://nextjs.org/b
 
 For more on Next 12 and React Server Components, check out this video from the NextJS Conf:
 
-
 [![](http://img.youtube.com/vi/WlP2TB2ORL4/0.jpg)](https://www.youtube.com/embed/WlP2TB2ORL4?start=452 "Next.js at the Edge - Suzanne Aldrich + Lee Robinson - (Next.js Conf 2021)")
-
 
 ### ACIS API
 
