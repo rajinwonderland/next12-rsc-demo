@@ -55,7 +55,7 @@ export const options = {
       elems: [
         {
           name: "maxt",
-          interval: [70],
+          interval: "yly",
           smry: "max",
           smry_only: "1",
           units: "degreeF",
@@ -70,7 +70,7 @@ export const options = {
       elems: [
         {
           name: "mint",
-          interval: [70],
+          interval: "yly",
           smry: "min",
           smry_only: "1",
           units: "degreeF",
@@ -85,7 +85,7 @@ export const options = {
       elems: [
         {
           name: "avgt",
-          interval: [70],
+          interval: "yly",
           smry: "mean",
           smry_only: "1",
           units: "degreeF",
