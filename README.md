@@ -2,7 +2,7 @@
 
 This is the demo of a historical temperature application (sourced from the ACIS) built with Next.js and React Server Components.
 
-**Demo of the Temperature App here: https://acis-demo-jmvc0of48-aridge.vercel.app/**
+**Demo of the Temperature App here: https://acis-demo-aridge.vercel.app/**
 
 ### Development
 
@@ -31,9 +31,12 @@ For more on Next 12 and React Server Components, check out this video from the N
 
 [![](http://img.youtube.com/vi/WlP2TB2ORL4/0.jpg)](https://www.youtube.com/embed/WlP2TB2ORL4?start=452 "Next.js at the Edge - Suzanne Aldrich + Lee Robinson - (Next.js Conf 2021)")
 
-### ACIS API
+### OpenWeatherAPI
 
-- [Query Builder](http://builder.rcc-acis.org/)
+- [Documentation](https://openweathermap.org/api)
+
+### ACIS
+
 - [Documentation](http://www.rcc-acis.org/index.html)
 
 ### Styles
