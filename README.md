@@ -29,9 +29,9 @@ Read the announcement from the next team here: [Next.js 12](https://nextjs.org/b
 
 For more on Next 12 and React Server Components, check out this video from the NextJS Conf:
 
-<figure class="video_container">
-  <iframe src="https://www.youtube.com/embed/WlP2TB2ORL4?start=452" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>
+
+[![](http://img.youtube.com/vi/WlP2TB2ORL4/0.jpg)](https://www.youtube.com/embed/WlP2TB2ORL4?start=452 "Next.js at the Edge - Suzanne Aldrich + Lee Robinson - (Next.js Conf 2021)")
+
 
 ### ACIS API
 
