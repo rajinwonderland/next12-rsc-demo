@@ -12,11 +12,32 @@ export function getUrl(lat: number | string, lon: number | string) {
   return url.toString();
 }
 
-export async function getWeather(city: CityProps): Promise<WeatherResponse> {
+export function getBackupUrl(lat: number | string, lon: number | string) {
+  const url = new URL(baseUrl);
+  url.searchParams.append("lat", lat.toString());
+  url.searchParams.append("lon", lon.toString());
+  url.searchParams.append("units", "imperial");
+  url.searchParams.append("appid", processEnv.backupOpenWeatherApiKey);
+  return url.toString();
+}
+export async function getWeather(
+  city: CityProps
+): Promise<WeatherResponse | WeatherErrorResponse> {
   const url = getUrl(city.latitude, city.longitude);
   const res = await fetch(url);
   const data = await res.json();
+  if (data?.cod === 429) {
+    const retryUrl = getBackupUrl(city.latitude, city.longitude);
+    const retryRes = await fetch(retryUrl);
+    const retryData = await retryRes.json();
+    return retryData;
+  }
   return data;
+}
+
+export interface WeatherErrorResponse {
+  cod: number;
+  message: string;
 }
 
 export interface WeatherResponse {
