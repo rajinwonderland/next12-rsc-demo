@@ -1,0 +1,79 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.mxauto {
+  margin: auto;
+}
+
+.chart {
+  margin: auto;
+  max-width: 750px;
+  padding: 2rem;
+}
+
+.chart-title {
+  margin-bottom: 1em;
+  font-size: 1.25rem;
+}
+
+.autocomplete {
+  margin: auto;
+  padding: 2rem;
+}
+.autocomplete input {
+  padding: 0.5rem;
+  margin: auto;
+  width: 100%;
+}
+
+.autocomplete ul {
+  list-style: none;
+}
+.autocomplete .item {
+  padding: 0.5rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.spinner {
+  margin: 12px;
+  width: 28px;
+  height: 28px;
+  animation: spinner-rotating 1.2s infinite;
+  animation-timing-function: steps(12, end);
+}
+.spinner:before {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 4px;
+  margin: 0;
+  margin-left: 12px;
+  border-radius: 50%;
+  background: #888;
+  color: #ccc;
+  box-shadow: 6px 1.61px, 10.39px 6px, 12px 12px, 10.39px 18px, 6px 22.39px,
+    0 24px, -6px 1.61px #999, -10.39px 6px #aaa, -12px 12px #bbb, -10.39px 18px,
+    -6px 22.39px;
+}
+@keyframes spinner-rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
