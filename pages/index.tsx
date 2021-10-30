@@ -11,6 +11,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import CityInfo from "../components/city-info.client";
 import { MonthlyChart } from "../components/monthly-chart.server";
 import { YearlyChart } from "../components/yearly-chart.server";
+
 export default function Home() {
   const [city, setCity] = useState({
     city: "Irvine",

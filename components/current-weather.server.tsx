@@ -12,7 +12,7 @@ export interface CurrentWeatherProps {
 }
 export default function CurrentWeather({ city }: CurrentWeatherProps) {
   const data = useData(
-    `${dt().format("MM-YY-DD-hhA")}-${city.longitude}${city.latitude}-weather`,
+    `${dt().format("YY-MM-DD-hhA")}-${city.longitude}${city.latitude}-weather`,
     () => getWeather(city)
   );
   return (
